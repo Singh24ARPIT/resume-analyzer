@@ -170,9 +170,24 @@ npm run build
 
 GitHub Actions runs the same checks on pushes and pull requests to `main` (see [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
+## Deploy on Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Singh24ARPIT/rolefit)
+
+The repo includes a [`render.yaml`](render.yaml) Blueprint that creates a free Node web service in Singapore:
+
+- Build: `npm ci --include=dev && npm run build`
+- Start: `npm run start` (Next.js reads Render's `PORT`)
+- Health check: `/`
+- Node 22
+
+Click the button, sign in with GitHub, and approve the Blueprint. The first deploy runs in demo mode, so no environment variables are required. Free Render services spin down after inactivity, so the first request after a pause can take about a minute.
+
+To enable real accounts and Gemini, add the variables from `.env.example` in the Render dashboard, then redeploy. Set `NEXT_PUBLIC_APP_URL` to the Render URL and add `<render-url>/auth/callback` to your Supabase redirect URLs. `NEXT_PUBLIC_*` values must be present before the build; server-only values can be changed and redeployed.
+
 ## Deployment notes
 
-This repository is source-only by design; the project is intended to run locally or on any Node host. If you deploy it:
+The repository includes a Render Blueprint and runs on any Node host. If you deploy elsewhere:
 
 - Set the environment variables in the host dashboard.
 - Set `NEXT_PUBLIC_APP_URL` to the production origin and add `<origin>/auth/callback` to Supabase redirect URLs.
