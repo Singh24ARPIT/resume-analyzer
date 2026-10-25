@@ -50,7 +50,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border pt-5 text-[11px] text-muted sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Rolefit. Built as a B.Tech project.</p>
+          <p>© {new Date().getFullYear()} Resume Analyzer. Built as a B.Tech project.</p>
           <div className="flex items-center gap-4">
             <span>Private by default</span>
             <ThemeToggle className="size-8" />

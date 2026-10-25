@@ -109,7 +109,7 @@ async function safeFetch(startUrl: URL) {
         signal: AbortSignal.timeout(9_000),
         headers: {
           "user-agent":
-            "RolefitJobImporter/1.0 (+https://github.com/Singh24ARPIT; job description reader)",
+            "ResumeAnalyzerJobImporter/1.0 (+https://github.com/Singh24ARPIT; job description reader)",
           accept: "text/html,application/xhtml+xml,text/plain;q=0.9",
           "accept-language": "en-US,en;q=0.8",
         },

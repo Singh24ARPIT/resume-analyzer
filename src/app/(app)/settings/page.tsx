@@ -7,7 +7,7 @@ import { getWorkspaceCounts } from "@/lib/data/library";
 
 export const metadata: Metadata = {
   title: "Settings",
-  description: "Manage your Rolefit profile, data, and AI settings.",
+  description: "Manage your Resume Analyzer profile, data, and AI settings.",
 };
 
 export default async function SettingsPage() {
@@ -31,7 +31,7 @@ export default async function SettingsPage() {
         }}
         counts={counts}
         aiConfigured={aiConfigured}
-        aiModel={aiConfigured ? geminiConfig.model : "rolefit-local"}
+        aiModel={aiConfigured ? geminiConfig.model : "resume-analyzer-local"}
       />
     </>
   );

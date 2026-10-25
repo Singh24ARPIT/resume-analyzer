@@ -49,7 +49,7 @@ export function DownloadLocalReportButton({
       type="button"
       onClick={() =>
         downloadTextFile({
-          fileName: `rolefit-report-${result.id}.json`,
+          fileName: `resume-analyzer-report-${result.id}.json`,
           text: JSON.stringify(result, null, 2),
         })
       }

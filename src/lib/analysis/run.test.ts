@@ -29,7 +29,7 @@ describe("analysis pipeline", () => {
 
     expect(result.id).toBe("test-analysis");
     expect(result.createdAt).toBe("2026-01-01T00:00:00.000Z");
-    expect(result.model).toBe("rolefit-local");
+    expect(result.model).toBe("resume-analyzer-local");
     expect(result.aiFallback).toBe(false);
     expect(result.scores.semantic).toBe(74);
     expect(result.overallScore).toBe(deterministic.overallScore);

@@ -1,6 +1,6 @@
-# Rolefit
+# Resume Analyzer
 
-Rolefit is a full-suite AI resume analyzer. It compares a resume against a job description and explains the result: six weighted scores, matched and missing requirements, ATS checks, grounded feedback, bullet rewrites, cover letters, and version comparison.
+Resume Analyzer is a full-suite job-matching tool. It compares a resume against a job description and explains the result: six weighted scores, matched and missing requirements, ATS checks, grounded feedback, bullet rewrites, cover letters, and version comparison.
 
 The scoring number is deterministic TypeScript. Gemini only writes the prose, so the same resume and job pair always produces the same score.
 
@@ -31,7 +31,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and choose **Explore the demo workspace**. No environment variables are required. Demo analyses, resumes, jobs, and cover letters are stored in `localStorage` under `rolefit:*` keys; sample fixtures are read-only.
+Open [http://localhost:3000](http://localhost:3000) and choose **Explore the demo workspace**. No environment variables are required. Demo analyses, resumes, jobs, and cover letters are stored in `localStorage` under `resume-analyzer:*` keys; sample fixtures are read-only.
 
 Demo uploads are parsed inside the request and never stored on a server.
 
@@ -172,7 +172,7 @@ GitHub Actions runs the same checks on pushes and pull requests to `main` (see [
 
 ## Deploy on Render
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Singh24ARPIT/rolefit)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Singh24ARPIT/resume-analyzer)
 
 The repo includes a [`render.yaml`](render.yaml) Blueprint that creates a free Node web service in Singapore:
 

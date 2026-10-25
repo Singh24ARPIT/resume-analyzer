@@ -590,7 +590,7 @@ export function AnalyzeForm({
                   )}
                 </Button>
                 <p className="text-[10px] leading-5 text-muted">
-                  Rolefit reads public job pages, prefers JSON-LD job data, and
+                  Resume Analyzer reads public job pages, prefers JSON-LD job data, and
                   strips navigation. Some job boards block automated readers; if
                   the import fails, paste the description.
                 </p>

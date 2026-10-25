@@ -7,7 +7,7 @@ const eslintConfig = defineConfig([
   ...nextTs,
   {
     rules: {
-      // Rolefit intentionally hydrates browser-local demo state after mount.
+      // Resume Analyzer intentionally hydrates browser-local demo state after mount.
       // These components read localStorage (an external store) once the client
       // is available, which this rule flags as a cascading render.
       "react-hooks/set-state-in-effect": "off",

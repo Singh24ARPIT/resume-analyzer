@@ -7,7 +7,7 @@ import type { User } from "@supabase/supabase-js";
 
 export const DEMO_USER = {
   id: "demo-user",
-  email: "demo@rolefit.local",
+  email: "demo@resumeanalyzer.local",
   name: "Demo User",
 };
 

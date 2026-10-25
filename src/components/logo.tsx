@@ -44,8 +44,8 @@ export function Logo({
         </svg>
       </span>
       {showWordmark ? (
-        <span className="text-[17px] font-semibold tracking-[-0.03em]">
-          rolefit<span className="text-accent">.</span>
+        <span className="text-[16px] font-semibold tracking-[-0.03em]">
+          Resume Analyzer<span className="text-accent">.</span>
         </span>
       ) : null}
     </span>

@@ -4,7 +4,7 @@ import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to your Rolefit workspace.",
+  description: "Sign in to your Resume Analyzer workspace.",
 };
 
 type Props = {

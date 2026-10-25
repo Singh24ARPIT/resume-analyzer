@@ -144,7 +144,7 @@ export async function runAnalysis(
 
   let feedback: FeedbackOutput;
   let aiFallback = false;
-  let model = "rolefit-local";
+  let model = "resume-analyzer-local";
 
   if (input.includeFeedback === false) {
     feedback = mockFeedback({

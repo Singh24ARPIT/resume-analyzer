@@ -12,7 +12,7 @@ import { sampleAnalysis } from "@/lib/demo/data";
 export const metadata: Metadata = {
   title: "Sample report",
   description:
-    "See what a Rolefit resume analysis looks like: explainable scores, skill gaps, ATS checks, and grounded rewrites.",
+    "See what Resume Analyzer produces: explainable scores, skill gaps, ATS checks, and grounded rewrites.",
 };
 
 export default function SampleReportPage() {

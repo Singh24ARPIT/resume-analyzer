@@ -446,7 +446,7 @@ export default function HomePage() {
                 Your resume is not content. It is your career.
               </h2>
               <p className="mt-3 max-w-md text-sm leading-6 text-muted">
-                We treat it that way. Rolefit is account-first, private by
+                We treat it that way. Resume Analyzer is account-first, private by
                 default, and built so you can leave with your data — or delete
                 all of it — whenever you want.
               </p>

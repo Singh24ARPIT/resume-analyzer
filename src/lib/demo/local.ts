@@ -6,10 +6,10 @@ import type {
   ResumeRecord,
 } from "@/lib/types";
 
-export const ANALYSIS_STORAGE_PREFIX = "rolefit:analysis:";
-export const RESUME_STORAGE_PREFIX = "rolefit:resume:";
-export const JOB_STORAGE_PREFIX = "rolefit:job:";
-export const LETTER_STORAGE_PREFIX = "rolefit:letter:";
+export const ANALYSIS_STORAGE_PREFIX = "resume-analyzer:analysis:";
+export const RESUME_STORAGE_PREFIX = "resume-analyzer:resume:";
+export const JOB_STORAGE_PREFIX = "resume-analyzer:job:";
+export const LETTER_STORAGE_PREFIX = "resume-analyzer:letter:";
 
 export interface LocalResume {
   resume: ResumeRecord;

@@ -1,4 +1,4 @@
--- Rolefit initial schema
+-- Resume Analyzer initial schema
 -- Apply this in the Supabase SQL editor (or with `supabase db push`).
 -- It creates the workspace tables, row-level security policies, and the
 -- private `resumes` storage bucket used by the app.

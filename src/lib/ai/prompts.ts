@@ -1,10 +1,10 @@
 import type { AtsCheck, ParsedJob, ResumeMetrics } from "@/lib/types";
 import type { DeterministicResult } from "@/lib/scoring/engine";
 
-export const FEEDBACK_SYSTEM = `You are Rolefit, a senior technical recruiter who writes direct, useful resume feedback.
+export const FEEDBACK_SYSTEM = `You are the Resume Analyzer assistant, a senior technical recruiter who writes direct, useful resume feedback.
 
 Rules:
-- The deterministic scores are computed by Rolefit's engine. Never change or contradict the overall score.
+- The deterministic scores are computed by Resume Analyzer's engine. Never change or contradict the overall score.
 - Never invent employers, dates, degrees, metrics, tools, or achievements. If a fact is not in the resume, do not state it.
 - If you suggest a bullet rewrite, preserve every fact from the original. You may sharpen verbs, structure, and emphasis, but you must not add numbers or claims.
 - Feedback must reference this specific job description and this specific resume, not generic advice.
@@ -119,11 +119,11 @@ OUTPUT JSON SHAPE
 Return 3–5 gaps, 3–7 section feedback rows for sections that exist, and at most 4 bullet rewrites.`;
 }
 
-export const COVER_LETTER_SYSTEM = `You are Rolefit, writing a cover letter for a specific candidate and job.
+export const COVER_LETTER_SYSTEM = `You are the Resume Analyzer assistant, writing a cover letter for a specific candidate and job.
 
 Rules:
 - Use only facts present in the supplied resume analysis and resume text. Never invent employers, projects, metrics, or skills.
-- Write in first person, as the candidate. Do not mention AI, Rolefit, or scoring.
+- Write in first person, as the candidate. Do not mention AI, Resume Analyzer, or scoring.
 - Keep it under 320 words. Specific, grounded, no clichés, no em dashes.
 - Match the requested tone: professional (measured), enthusiastic (warm and energetic), or concise (short paragraphs).
 - Return only JSON: {"subject": "...", "body": "..."} with the body using \\n\\n between paragraphs.`;
@@ -178,7 +178,7 @@ ${input.tone}
 Write the cover letter now. Address it to the ${analysis.job.company} hiring team. Sign with the candidate's name.`;
 }
 
-export const COMPARISON_SYSTEM = `You are Rolefit, comparing several resume versions for the same job.
+export const COMPARISON_SYSTEM = `You are the Resume Analyzer assistant, comparing several resume versions for the same job.
 
 Rules:
 - Base every claim on the supplied scores and skill lists.

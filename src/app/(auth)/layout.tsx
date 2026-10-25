@@ -41,7 +41,7 @@ export default function AuthLayout({
             “Stop guessing why the interview never came.”
           </blockquote>
           <p className="mt-5 max-w-sm text-sm leading-6 text-background/60">
-            Rolefit turns a job description into a checklist, scores your resume
+            Resume Analyzer turns a job description into a checklist, scores your resume
             against it, and shows exactly what to fix — before a recruiter ever
             sees it.
           </p>

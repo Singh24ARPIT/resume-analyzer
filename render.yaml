@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: rolefit
+    name: resume-analyzer
     runtime: node
     plan: free
     region: singapore

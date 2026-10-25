@@ -49,7 +49,7 @@ export function AuthForm({
             Demo workspace
           </p>
           <h1 className="mt-2 text-[30px] font-semibold leading-tight tracking-[-0.035em]">
-            Try Rolefit before wiring up accounts.
+            Try Resume Analyzer before wiring up accounts.
           </h1>
           <p className="mt-2 text-sm leading-6 text-muted">
             The demo runs entirely in your browser with sample data and a mock
@@ -109,7 +109,7 @@ export function AuthForm({
           {isSignup ? "Create your workspace" : "Welcome back"}
         </p>
         <h1 className="mt-2 text-[30px] font-semibold leading-tight tracking-[-0.035em]">
-          {isSignup ? "Start matching smarter." : "Sign in to Rolefit."}
+          {isSignup ? "Start matching smarter." : "Sign in to Resume Analyzer."}
         </h1>
         <p className="mt-2 text-sm leading-6 text-muted">
           {isSignup
@@ -221,12 +221,12 @@ export function AuthForm({
       {isSignup ? (
         <p className="mt-4 text-center text-[11px] leading-5 text-muted">
           By creating an account you agree to keep uploaded content to your own
-          resumes. Rolefit stores files privately in your workspace.
+          resumes. Resume Analyzer stores files privately in your workspace.
         </p>
       ) : null}
 
       <p className="mt-6 text-center text-sm text-muted">
-        {isSignup ? "Already have an account?" : "New to Rolefit?"}{" "}
+        {isSignup ? "Already have an account?" : "New to Resume Analyzer?"}{" "}
         <Link
           href={isSignup ? "/login" : "/signup"}
           className="font-medium text-foreground underline-offset-4 hover:underline"

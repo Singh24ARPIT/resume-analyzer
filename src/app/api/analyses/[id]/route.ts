@@ -28,7 +28,7 @@ export async function GET(
 
   return NextResponse.json(data.result, {
     headers: {
-      "content-disposition": `attachment; filename="rolefit-report-${id}.json"`,
+      "content-disposition": `attachment; filename="resume-analyzer-report-${id}.json"`,
     },
   });
 }

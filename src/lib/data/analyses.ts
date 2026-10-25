@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { demoAnalyses, sampleAnalysis } from "@/lib/demo/data";
 import { scoreBand } from "@/lib/utils";
 
-export const LOCAL_ANALYSIS_PREFIX = "rolefit:analysis:";
+export const LOCAL_ANALYSIS_PREFIX = "resume-analyzer:analysis:";
 
 function clampScore(value: number) {
   return Math.max(0, Math.min(100, Math.round(value)));
@@ -43,7 +43,7 @@ function demoAnalysis(id: string): AnalysisResult | null {
       ...sampleAnalysis.resume,
       title: summary.resumeTitle,
     },
-    model: "rolefit-demo",
+    model: "resume-analyzer-demo",
   };
 }
 

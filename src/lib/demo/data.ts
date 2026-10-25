@@ -214,7 +214,7 @@ export const sampleAnalysis: AnalysisResult = {
     "Tell us about a time you pushed back on a design that was not accessible.",
     "How would you introduce Playwright to a team that currently relies on manual QA?",
   ],
-  model: "rolefit-sample",
+  model: "resume-analyzer-sample",
 };
 
 export const sampleCoverLetter: CoverLetterRecord = {

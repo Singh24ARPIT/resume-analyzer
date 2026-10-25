@@ -1,4 +1,4 @@
-export const DEMO_COOKIE = "rolefit_demo";
+export const DEMO_COOKIE = "resume_analyzer_demo";
 export const DEMO_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();

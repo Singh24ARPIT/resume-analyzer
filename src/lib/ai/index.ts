@@ -35,7 +35,7 @@ export async function generateFeedback(
     return {
       feedback: mockFeedback(input),
       fallback: false,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 
@@ -60,7 +60,7 @@ export async function generateFeedback(
     return {
       feedback: mockFeedback(input),
       fallback: true,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 }
@@ -88,7 +88,7 @@ export async function generateCoverLetter(input: {
     return {
       letter: mockCoverLetter(input),
       fallback: false,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 
@@ -118,7 +118,7 @@ export async function generateCoverLetter(input: {
     return {
       letter: mockCoverLetter(input),
       fallback: true,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 }
@@ -146,7 +146,7 @@ export async function generateComparisonVerdict(input: {
     return {
       verdict: mockComparisonVerdict(input.entries),
       fallback: false,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 
@@ -171,7 +171,7 @@ export async function generateComparisonVerdict(input: {
     return {
       verdict: mockComparisonVerdict(input.entries),
       fallback: true,
-      model: "rolefit-local",
+      model: "resume-analyzer-local",
     };
   }
 }
