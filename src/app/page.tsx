@@ -5,20 +5,17 @@ import {
   BarChart3,
   Check,
   CheckCircle2,
-  Database,
   EyeOff,
   FileCheck2,
   FileText,
   Gauge,
-  GitCompareArrows,
+  KeyRound,
   Layers,
-  LockKeyhole,
-  PenLine,
   ScanSearch,
+  ServerOff,
   ShieldCheck,
   Sparkles,
   Target,
-  Trash2,
   Wand2,
   X,
   Zap,
@@ -35,7 +32,7 @@ const stats = [
   ["6", "weighted signals"],
   ["200+", "skill aliases normalized"],
   ["8", "ATS checks"],
-  ["~30s", "to a full report"],
+  ["0", "files stored"],
 ];
 
 const scoreRows = [
@@ -109,7 +106,8 @@ export default function HomePage() {
               <p className="animate-rise-delay-2 mt-6 max-w-lg text-[15px] leading-7 text-muted sm:text-base">
                 Upload a resume, paste the job description, and get an
                 explainable match score with the exact skills, keywords, and
-                bullet rewrites that move the needle. No black-box verdicts.
+                bullet rewrites that move the needle. No account, no database,
+                no stored files.
               </p>
 
               <div className="animate-rise-delay-3 mt-8 flex flex-col gap-3 sm:flex-row">
@@ -132,11 +130,11 @@ export default function HomePage() {
               <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-muted">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 className="size-3.5 text-success" />
-                  No credit card
+                  No account needed
                 </span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="size-3.5 text-success" />
-                  Private by default
+                  Nothing stored
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Zap className="size-3.5 text-accent" />
@@ -169,12 +167,12 @@ export default function HomePage() {
                 The product
               </Badge>
               <h2 className="mt-4 text-[32px] font-semibold leading-[1.08] tracking-[-0.045em] text-balance sm:text-[42px]">
-                Everything between “I applied” and “I got the interview.”
+                From resume to a fix list in one pass.
               </h2>
               <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
-                One workspace for the job description, the resume, the score,
-                and the fixes — so you are not stitching together five tools and
-                a spreadsheet.
+                One page for the resume, the job description, the score, and the
+                fixes. No workspace to maintain and nothing to clean up
+                afterward.
               </p>
             </div>
 
@@ -262,44 +260,43 @@ export default function HomePage() {
               </FeatureCard>
 
               <FeatureCard
-                icon={GitCompareArrows}
-                title="Compare resume versions"
-                description="Run two to four resumes against the same job and see which one actually earns the screen."
+                icon={ServerOff}
+                title="No account, no database"
+                description="The app parses your file in memory, returns the report to this tab, and keeps nothing."
               >
-                <div className="mt-5 space-y-2">
+                <ul className="mt-5 space-y-2">
                   {[
-                    ["resume_v3.pdf", 84, "Best fit"],
-                    ["resume_v2.pdf", 76, ""],
-                    ["resume_short.pdf", 69, ""],
-                  ].map(([name, score, tag]) => (
-                    <div key={String(name)} className="flex items-center gap-3 rounded-lg border border-border bg-surface-2 px-2.5 py-2 text-[10px]">
-                      <FileText className="size-3.5 text-muted" />
-                      <span className="flex-1 truncate">{name}</span>
-                      {tag ? <Badge variant="success" className="px-1.5 py-0.5 text-[8px]">{tag}</Badge> : null}
-                      <span className="font-mono font-medium">{score}</span>
-                    </div>
+                    "No database or file storage",
+                    "No upload history to clean up",
+                    "Refreshing the tab discards the report",
+                    "Print or export JSON if you want a copy",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-[11px] text-muted-strong">
+                      <Check className="size-3.5 shrink-0 text-success" />
+                      {item}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </FeatureCard>
 
               <FeatureCard
-                icon={PenLine}
-                title="Cover letters on demand"
-                description="A grounded first draft from the same resume and job context. Edit it, then export to DOCX."
+                icon={KeyRound}
+                title="Works without an API key"
+                description="Scoring is deterministic and feedback has a local fallback, so the analyzer never depends on a model being available."
               >
-                <div className="mt-5 rounded-xl border border-border bg-surface-2 p-3.5">
-                  <p className="font-mono text-[8px] uppercase tracking-[0.14em] text-muted">
-                    Dear hiring team,
-                  </p>
-                  <p className="mt-2 text-[10px] leading-4 text-muted-strong">
-                    I have spent the last four years shipping design-system-led
-                    React applications. Lumen&apos;s work on…
-                  </p>
-                  <div className="mt-2 flex gap-1">
-                    <span className="h-1 w-12 rounded-full bg-border" />
-                    <span className="h-1 w-8 rounded-full bg-border" />
-                    <span className="h-1 w-16 rounded-full bg-border" />
-                  </div>
+                <div className="mt-5 space-y-2 rounded-xl border border-border bg-surface-2 p-3.5">
+                  {[
+                    ["Deterministic engine", "Always on"],
+                    ["Gemini prose", "Optional"],
+                    ["Cloud storage", "Not used"],
+                  ].map(([label, value]) => (
+                    <div key={label} className="flex items-center justify-between text-[10px]">
+                      <span className="text-muted-strong">{label}</span>
+                      <span className="font-mono text-[9px] uppercase tracking-[0.08em] text-muted">
+                        {value}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </FeatureCard>
             </div>
@@ -321,8 +318,8 @@ export default function HomePage() {
                   transparent read of how close you are, and a path to closer.
                 </p>
                 <div className="mt-7 inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-3.5 py-2.5 text-[11px] text-muted">
-                  <LockKeyhole className="size-3.5 text-success" />
-                  Files live in a private, per-user storage bucket.
+                  <ServerOff className="size-3.5 text-success" />
+                  Files are parsed in memory and discarded with the request.
                 </div>
               </div>
 
@@ -338,13 +335,13 @@ export default function HomePage() {
                     number: "02",
                     icon: ScanSearch,
                     title: "Run the hybrid analysis",
-                    copy: "A deterministic engine scores six signals. Gemini reads the context, writes the feedback, and proposes grounded rewrites.",
+                    copy: "A deterministic engine scores six signals. If Gemini is configured, it writes the feedback and proposes grounded rewrites; otherwise local templates do.",
                   },
                   {
                     number: "03",
                     icon: BarChart3,
-                    title: "Fix, re-run, compare",
-                    copy: "Edit the resume, analyze again, and compare versions side by side to see what actually improved.",
+                    title: "Fix the gaps and re-run",
+                    copy: "Edit the resume and analyze again. Nothing is saved between runs, so you decide what to keep.",
                   },
                 ].map((step) => (
                   <div
@@ -446,16 +443,16 @@ export default function HomePage() {
                 Your resume is not content. It is your career.
               </h2>
               <p className="mt-3 max-w-md text-sm leading-6 text-muted">
-                We treat it that way. Resume Analyzer is account-first, private by
-                default, and built so you can leave with your data — or delete
-                all of it — whenever you want.
+                So this analyzer does not keep it. There is no account, no
+                database, and no stored file. Upload, parse, score, read the
+                fixes — then close the tab.
               </p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 {[
                   {
-                    icon: Database,
-                    title: "Private storage",
-                    copy: "Files are scoped to your user with row-level security.",
+                    icon: ServerOff,
+                    title: "Nothing persisted",
+                    copy: "The file is parsed in memory for one request and then discarded.",
                   },
                   {
                     icon: EyeOff,
@@ -463,9 +460,9 @@ export default function HomePage() {
                     copy: "Contact details are stripped before any model call.",
                   },
                   {
-                    icon: Trash2,
-                    title: "Delete anytime",
-                    copy: "One action removes your files, analyses, and letters.",
+                    icon: KeyRound,
+                    title: "Key stays server-side",
+                    copy: "The Gemini API key is never sent to the browser.",
                   },
                   {
                     icon: ShieldCheck,
@@ -498,6 +495,7 @@ export default function HomePage() {
                 </div>
                 <div className="mt-5 space-y-2.5">
                   {[
+                    "No database or file storage",
                     "Email and phone numbers removed",
                     "Portfolio and social links removed",
                     "Prompt injection markers neutralized",
@@ -513,14 +511,15 @@ export default function HomePage() {
                 <div className="mt-5 rounded-xl border border-border bg-surface-2 p-3">
                   <p className="text-[10px] leading-5 text-muted">
                     <span className="font-medium text-muted-strong">Note:</span>{" "}
-                    demo mode runs with mock data and never sends your text
-                    anywhere. Real analyses call Gemini only after redaction.
+                    without a Gemini key the analyzer still runs — scoring and
+                    feedback stay local. With a key, text is sent only after
+                    redaction.
                   </p>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-3 hidden rounded-xl border border-border bg-foreground px-3 py-2 text-background card-shadow sm:block">
-                <p className="text-[10px]">Row-level security</p>
-                <p className="font-mono text-[9px] text-background/50">auth.uid() = user_id</p>
+                <p className="text-[10px]">Stored records</p>
+                <p className="font-mono text-[9px] text-background/50">0 · parsed in memory</p>
               </div>
             </div>
           </div>
@@ -560,7 +559,7 @@ export default function HomePage() {
                   </Link>
                 </div>
                 <p className="mt-4 text-[10px] text-muted">
-                  Demo mode is free. No key or account needed to look around.
+                  No account, no key, and no upload history. Just the analysis.
                 </p>
               </div>
             </div>

@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/marketing/site-footer";
 import { SiteNav } from "@/components/marketing/site-nav";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { sampleAnalysis } from "@/lib/demo/data";
+import { sampleAnalysis } from "@/lib/sample-report";
 
 export const metadata: Metadata = {
   title: "Sample report",
@@ -60,8 +60,8 @@ export default function SampleReportPage() {
             <div>
               <p className="text-[13px] font-medium">Ready to see your own gaps?</p>
               <p className="mt-1 text-[11px] leading-5 text-muted">
-                Upload a PDF or DOCX resume and paste the job description. The
-                demo workspace needs no account.
+                Upload a PDF or DOCX resume and paste the job description. No
+                account needed, and nothing is stored.
               </p>
             </div>
             <Link

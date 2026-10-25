@@ -1,18 +1,9 @@
 import { NextResponse } from "next/server";
-import { getViewer } from "@/lib/auth";
 import { fetchJobFromUrl, JobImportError } from "@/lib/parsing/job";
 
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
-  const viewer = await getViewer();
-  if (!viewer) {
-    return NextResponse.json(
-      { error: "Sign in to import a job description." },
-      { status: 401 },
-    );
-  }
-
   let url = "";
   try {
     const body = (await request.json()) as { url?: unknown };
