@@ -359,10 +359,17 @@ export function AnalyzeWorkspace({
                   aria-label="Job description"
                 />
                 <div className="flex items-center justify-between text-[10px] text-muted">
-                  <span className="flex items-center gap-1.5">
+                  <span
+                    className={cn(
+                      "flex items-center gap-1.5",
+                      jobText.trim() && !hasJob && "text-warning",
+                    )}
+                  >
                     <ClipboardPaste className="size-3" />
                     {jobText.trim()
-                      ? `${jobText.trim().length.toLocaleString()} characters`
+                      ? hasJob
+                        ? `${jobText.trim().length.toLocaleString()} characters`
+                        : `${jobText.trim().length} / 60 characters minimum`
                       : "Job description required"}
                   </span>
                   {jobText.length > 0 ? (
@@ -486,7 +493,12 @@ export function AnalyzeWorkspace({
 
           {!file || !hasJob ? (
             <p className="text-[10px] text-muted">
-              Add a resume and a job description to enable the analysis.
+              {!file
+                ? "Choose a PDF or DOCX resume to enable the analysis."
+                : `Add ${Math.max(
+                    60 - jobText.trim().length,
+                    1,
+                  )} more characters to the job description to enable the analysis.`}
             </p>
           ) : null}
         </CardContent>
